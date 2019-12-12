@@ -4,7 +4,7 @@ const messageOne = document.querySelector('#message-1');
 const messageTwo = document.querySelector('#message-2');
 
 const mifuncion = async (address) => {
-    const blob = await fetch(`http://localhost:3000/weather?address=${address}`);
+    const blob = await fetch(`/weather?address=${address}`);
     const data = await blob.json();   
 
     if (data.error){
