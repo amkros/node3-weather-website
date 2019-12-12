@@ -21,30 +21,30 @@ hbs.registerPartials(partialsPath);
 
 app.get('', (req, res)=>{
     res.render('index', {
-        title: 'Weather App',
+        title: 'EL CLIMA',
         name: 'Abraham Mtz'
     });
 });
 
 app.get('/about', (req, res)=>{
     res.render('about', {
-        title: 'About me',
+        title: 'Acerca de mi',
         name: 'Abraham Mtz'
     });
 })
 
 app.get('/help', (req, res)=>{
     res.render('help', {
-        title: 'Help',
+        title: 'Ayuda',
         name: 'Abraham Mtz',
-        helpText: 'Help message'
+        helpText: 'Aqui te ayudamos'
     });
 });
 
 app.get('/weather', (req, res)=>{
     if (!req.query.address){
         return res.send({
-            error: 'You must provide an address'
+            error: 'Debes proporcionar una ubicacion'
         })
     }
 
