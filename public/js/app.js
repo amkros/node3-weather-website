@@ -21,7 +21,7 @@ const search = document.querySelector('input');
 
 weatherForm.addEventListener('submit', ()=>{
     event.preventDefault();
-    messageOne.textContent = 'Loading...';
+    messageOne.textContent = 'Procesando...';
     messageTwo.textContent = '';    
     const  location = search.value;    
     mifuncion(location);

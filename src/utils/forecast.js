@@ -9,7 +9,12 @@ const forecast = (latitud, longitud, callback) => {
             callback('No se pudo encontrar el clima para esta ubicacion', undefined);
         }
         else{
-            callback(undefined, `${body.daily.data[0].summary} Actualmente estamos a ${body.currently.temperature} grados centigrados. Con una probabilidad de ${body.currently.precipProbability} % de lluvia`);            
+            console.log(body.daily.data[0]);
+            callback(undefined, `
+            El clima para el dia de hoy es:  
+            ${body.daily.data[0].summary} Con una temperatura de ${body.currently.temperature} °C. 
+            Una maxima de ${body.daily.data[0].temperatureHigh} °C con una minima de ${body.daily.data[0].temperatureLow} °C.             
+            La probabilidad de lluvia es de ${body.currently.precipProbability} %`);            
         }
     });
 }
