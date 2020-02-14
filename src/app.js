@@ -26,6 +26,15 @@ app.get('', (req, res)=>{
     });
 });
 
+app.get('/testLock', (req, res) => { 
+ 
+    let date = Date.now();
+    let end = Date.now() + 10000;  
+    /* Long Job Operation Simulation */  
+    while (date < end) {  date = Date.now()  }  
+    res.send('I am done!');
+});
+
 app.get('/about', (req, res)=>{
     res.render('about', {
         title: 'Acerca de mi',
@@ -40,6 +49,8 @@ app.get('/help', (req, res)=>{
         helpText: 'Aqui te ayudamos'
     });
 });
+
+
 
 app.get('/weather', (req, res)=>{
     if (!req.query.address){
